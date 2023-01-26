@@ -15,3 +15,15 @@ getComputerChoise();
 const playerSelection = "Rock";
 const computerSelection = getComputerChoise();
 console.log(computerSelection);
+
+function playRound (playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    if (playerSelection === computerSelection) {
+        console.log('Tie!')
+    }else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        console.log ('You lose! Paper beats rock!');
+    } else {
+        console.log ('You win!!!')
+    }
+}
+playRound (playerSelection, computerSelection);
