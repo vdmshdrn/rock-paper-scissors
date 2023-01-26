@@ -1,13 +1,17 @@
 function getComputerChoise() {
-    let getRandomNumber = Math.floor(1 + Math.random() * (3 + 1 -1));
-    //return getRandomNumber;
-    
+    let getRandomNumber = Math.floor(1 + Math.random() * (3 + 1 - 1));
+    let computerChoise = '';
+
     if (getRandomNumber === 1) {
-        console.log('Rock');
+        computerChoise = 'rock';
     } else if (getRandomNumber === 2) {
-        console.log ('Paper');
+        computerChoise = 'paper';
     } else {
-        console.log ('Scissors');
+        computerChoise = 'scissors';
     }
+    return computerChoise;
 }
 getComputerChoise();
+const playerSelection = "Rock";
+const computerSelection = getComputerChoise();
+console.log(computerSelection);
