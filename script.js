@@ -16,14 +16,23 @@ const playerSelection = "Rock";
 const computerSelection = getComputerChoise();
 console.log(computerSelection);
 
-function playRound (playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
         console.log('Tie!')
-    }else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        console.log ('You lose! Paper beats rock!');
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        console.log('You lose! Paper beats rock!');
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        console.log('You win! Rock beats scissors!');
+    } else if (playerSelection === 'paper' && computerSelection == 'rock') {
+        console.log('You win! Paper beats rock!');
+    } else if (playerSelection === 'paper' && computerSelection == 'scissors') {
+        console.log('You lose! Scissors beats paper!');
+    } else if (playerSelection === 'scissors' && computerSelection == 'rock') {
+        console.log('You lose! Rock beats scissors!');
     } else {
-        console.log ('You win!!!')
+        console.log('You win!Scissors beats paper!');
     }
 }
-playRound (playerSelection, computerSelection);
+
+playRound(playerSelection, computerSelection);
