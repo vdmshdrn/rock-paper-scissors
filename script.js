@@ -12,12 +12,16 @@ function getComputerChoise() {
     return computerChoise;
 }
 getComputerChoise();
-const playerSelection = prompt("Enter your answer here rock paper scissors: ", '');
-const computerSelection = getComputerChoise();
-console.log(computerSelection);
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+function getPlayerChoise() {
+    let playerChoise = prompt('Choise rock paper or scissors: ');
+    return playerChoise.toLowerCase();
+}
+
+
+function playRound(playerSelection,computerSelection) {
+    
+
     if (playerSelection === computerSelection) {
         console.log('Tie!')
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -35,4 +39,14 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-playRound(playerSelection, computerSelection);
+//playRound(playerSelection, computerSelection);
+function game() {
+    for (x = 0; x < 5; x++) {
+        const computerSelection = getComputerChoise();
+        const playerSelection = getPlayerChoise();
+        playRound(playerSelection, computerSelection);
+    }
+    
+}
+
+game ();
