@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
 
 
     if (playerSelection === computerSelection) {
-        console.log('Tie!')
+        console.log('Tie!');
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore++;
         console.log('You lose! Paper beats rock!');
@@ -42,7 +42,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
         console.log('You lose! Scissors beats paper!');
     } else if (playerSelection === 'scissors' && computerSelection == 'rock') {
-        computerScore++
+        computerScore++;
         console.log('You lose! Rock beats scissors!');
     } else {
         playerScore++;
@@ -52,11 +52,11 @@ function playRound(playerSelection, computerSelection) {
 
 //playRound(playerSelection, computerSelection);
 function game() {
-    for (x = 0; x < 5; x++) {
-        const computerSelection = getComputerChoise();
-        const playerSelection = getPlayerChoise();
-        playRound(playerSelection, computerSelection);
-    }
+
+    const computerSelection = getComputerChoise();
+    const playerSelection = getPlayerChoise();
+    playRound(playerSelection, computerSelection);
+
     if (playerScore > computerScore) {
         console.log('You win! Flawless victory!');
     } else if (computerScore > playerScore) {
