@@ -1,5 +1,12 @@
 let computerScore = 0;
 let playerScore = 0;
+const buttons = document.querySelectorAll('.choise');
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        console.log(button.id);
+    });
+});
 
 
 
@@ -19,7 +26,7 @@ function getComputerChoise() {
 getComputerChoise();
 
 function getPlayerChoise() {
-    let playerChoise = prompt('Choise rock paper or scissors: ');
+    let playerChoise = 'rock';
     return playerChoise.toLowerCase();
 }
 
@@ -67,4 +74,4 @@ function game() {
 
 }
 
-game();
+//game();
