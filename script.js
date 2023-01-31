@@ -4,12 +4,16 @@ const buttons = document.querySelectorAll('.choise');
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
-      
-      const playerChoise = button.id;
-      console.log(playerChoise);
+
+        const playerChoise = button.id;
+        console.log(playerChoise);
+
+        const computerChoiseArray = ['rock', 'paper', 'scissors'];
+        const computerChoise = computerChoiseArray[Math.floor(Math.random() * (3 + 0)) + 0];
+        console.log(computerChoise);
 
 
-});
+    });
 });
 
 
