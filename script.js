@@ -4,29 +4,32 @@ const buttons = document.querySelectorAll('.choise');
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
-        console.log(button.id);
-    });
+      
+      const playerChoise = button.id;
+      console.log(playerChoise);
+
+
+});
 });
 
 
+// function getComputerChoise() {
+//     let getRandomNumber = Math.floor(1 + Math.random() * (3 + 1 - 1));
+//     let computerChoise = '';
 
-function getComputerChoise() {
-    let getRandomNumber = Math.floor(1 + Math.random() * (3 + 1 - 1));
-    let computerChoise = '';
-
-    if (getRandomNumber === 1) {
-        computerChoise = 'rock';
-    } else if (getRandomNumber === 2) {
-        computerChoise = 'paper';
-    } else {
-        computerChoise = 'scissors';
-    }
-    return computerChoise;
-}
-getComputerChoise();
+//     if (getRandomNumber === 1) {
+//         computerChoise = 'rock';
+//     } else if (getRandomNumber === 2) {
+//         computerChoise = 'paper';
+//     } else {
+//         computerChoise = 'scissors';
+//     }
+//     return computerChoise;
+// }
+// getComputerChoise();
 
 function getPlayerChoise() {
-    let playerChoise = 'rock';
+    //let playerChoise = 'rock';
     return playerChoise.toLowerCase();
 }
 
