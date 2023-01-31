@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+const result = document.querySelector('.result');
 const buttons = document.querySelectorAll('.choise');
 buttons.forEach((button) => {
 
@@ -13,6 +14,7 @@ buttons.forEach((button) => {
         console.log(computerChoise);
 
         playRound(playerChoise, computerChoise);
+        console.log(`${computerScore} and ${playerScore}`);
     });
 });
 
