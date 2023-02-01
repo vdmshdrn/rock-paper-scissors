@@ -2,12 +2,16 @@ let computerScore = 0;
 let playerScore = 0;
 const result = document.querySelector('.result');
 const buttons = document.querySelectorAll('.choise');
+const playerOutpup = document.querySelector('.player_output');
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
 
         const playerChoise = button.id;
-        console.log(playerChoise);
+        const playerOut = document.createElement('p');
+        playerOut.classList.add('playerOut');
+        playerOut.textContent = `You choise ${playerChoise}`;
+        playerOutpup.appendChild(playerOut);
 
         const computerChoiseArray = ['rock', 'paper', 'scissors'];
         const computerChoise = computerChoiseArray[Math.floor(Math.random() * (3 - 0)) + 0];
@@ -15,6 +19,7 @@ buttons.forEach((button) => {
 
         playRound(playerChoise, computerChoise);
         console.log(`${computerScore} and ${playerScore}`);
+        
     });
 });
 
@@ -47,10 +52,6 @@ function playRound(playerChoise, computerChoise) {
 
 
 function game() {
-
-    const computerSelection = getComputerChoise();
-    const playerSelection = getPlayerChoise();
-    playRound(playerSelection, computerSelection);
 
     if (playerScore > computerScore) {
         console.log('You win! Flawless victory!');
