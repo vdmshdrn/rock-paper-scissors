@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -8,31 +9,38 @@
     border: 1px solid black;
     padding: 2em;
 }
+
 .choise_button {
     padding-top: 2em;
     padding-bottom: 2em;
 }
+
 .choise {
     width: 100px;
     height: 50px;
     margin: 0 10px;
+    
 }
+
 .score {
     display: flex;
     justify-content: center;
 }
+
 .player_score {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 10px;
 }
+
 .computer_score {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 10px;
 }
+
 .result {
     text-align: center;
 }
