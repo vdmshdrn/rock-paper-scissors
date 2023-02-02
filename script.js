@@ -22,6 +22,8 @@ buttons.forEach((button) => {
 
         winner(computerScore, playerScore);
 
+        reload();
+
     });
 });
 
@@ -53,17 +55,7 @@ function playRound(playerChoise, computerChoise) {
 }
 
 
-function game() {
 
-    if (playerScore > computerScore) {
-        console.log('You win! Flawless victory!');
-    } else if (computerScore > playerScore) {
-        console.log('You lose! Game over!');
-    } else {
-        console.log('TIE!!!');
-    }
-
-}
 
 function winner(computerScore, playerScore) {
     if (computerScore === 5 || playerScore === 5) {
@@ -75,4 +67,9 @@ function winner(computerScore, playerScore) {
     return false;
 }
 
-//game();
+function reload() {
+    if (winner(computerScore, playerScore)) {
+        playerScore = 0;
+        computerScore = 0;
+    }
+}
