@@ -11,15 +11,17 @@ buttons.forEach((button) => {
         const playerOut = document.createElement('p');
         playerOut.classList.add('playerOut');
         playerOut.textContent = `You choise ${playerChoise}`;
-        playerOutpup.appendChild(playerOut);
+        //playerOutpup.appendChild(playerOut);
 
         const computerChoiseArray = ['rock', 'paper', 'scissors'];
         const computerChoise = computerChoiseArray[Math.floor(Math.random() * (3 - 0)) + 0];
         console.log(computerChoise);
 
         playRound(playerChoise, computerChoise);
-        console.log(`${computerScore} and ${playerScore}`);
-        
+        console.log(`Computer score ${computerScore} and player score ${playerScore}`);
+
+        winner(computerScore, playerScore);
+
     });
 });
 
@@ -61,6 +63,16 @@ function game() {
         console.log('TIE!!!');
     }
 
+}
+
+function winner(computerScore, playerScore) {
+    if (computerScore === 5 || playerScore === 5) {
+        const winner = playerScore === 5 ? 'You WIN! Flawless victory!' :
+            'You lose!';
+        console.log(winner);
+        return true;
+    }
+    return false;
 }
 
 //game();
