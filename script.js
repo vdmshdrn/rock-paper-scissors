@@ -3,6 +3,8 @@ let playerScore = 0;
 const result = document.querySelector('.result');
 const buttons = document.querySelectorAll('.choise');
 const playerOutpup = document.querySelector('.player_output');
+const currentPlayerScore = document.querySelector('.current_player');
+const currentCompScore = document.querySelector('.current_comp');
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
@@ -18,8 +20,8 @@ buttons.forEach((button) => {
         console.log(computerChoise);
 
         playRound(playerChoise, computerChoise);
-        console.log(`Computer score ${computerScore} and player score ${playerScore}`);
-
+        currentPlayerScore.textContent = `${playerScore}`;
+        currentCompScore.textContent =`${computerScore}`;
         winner(computerScore, playerScore);
 
         reload();
