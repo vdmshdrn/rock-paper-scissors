@@ -76,7 +76,12 @@ function isWinner(computerScore, playerScore) {
 
 function reload() {
     if (isWinner(computerScore, playerScore)) {
-        playerScore = 0;
-        computerScore = 0;
+        setTimeout(function () {
+            playerScore = 0;
+            currentPlayerScore.textContent = `${playerScore}`;
+            computerScore = 0;
+            currentCompScore.textContent = `${computerScore}`;
+            winner.textContent = '';
+        }, 3000);
     }
 }
