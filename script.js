@@ -59,33 +59,28 @@ function playRound(playerChoise, computerChoise) {
 
 
 function endGame(computerScore, playerScore) {
-    return computerScore === 5 || playerScore === 5;
-
-}
-
-function isWinner() {
-    if (endGame()) {
+    if (computerScore === 5 || playerScore === 5) {
         if (playerScore === 5) {
-            result.style.display = 'none';
-            console.log('hey');
+            winner.textContent = 'Player Won!Press new game';
         } else {
-            result.style.display = 'none';
-            console.log('ehey');
+            winner.textContent = 'Computer won!Press new game';
         }
     }
+
 }
 
-function reload() {
+
+// function reload() {
     
-    if (endGame(computerScore, playerScore)) {
-        setTimeout(function () {
-            playerScore = 0;
-            currentPlayerScore.textContent = `${playerScore}`;
-            computerScore = 0;
-            currentCompScore.textContent = `${computerScore}`;
+//     if (endGame(computerScore, playerScore)) {
+//         setTimeout(function () {
+//             playerScore = 0;
+//             currentPlayerScore.textContent = `${playerScore}`;
+//             computerScore = 0;
+//             currentCompScore.textContent = `${computerScore}`;
 
 
-        }, 3000);
-    }
-}
+//         }, 3000);
+//     }
+// }
 game();
