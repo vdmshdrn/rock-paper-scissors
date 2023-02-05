@@ -6,6 +6,8 @@ const playerOutpup = document.querySelector('.player_output');
 const currentPlayerScore = document.querySelector('.current_player');
 const winner = document.querySelector('.winner');
 const currentCompScore = document.querySelector('.current_comp');
+
+function game() {
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
@@ -29,7 +31,7 @@ buttons.forEach((button) => {
 
     });
 });
-
+}
 
 function playRound(playerChoise, computerChoise) {
 
@@ -62,13 +64,7 @@ function playRound(playerChoise, computerChoise) {
 
 function isWinner(computerScore, playerScore) {
     if (computerScore === 5 || playerScore === 5) {
-        if (computerScore === 5) {
-            result.style.display = 'none';
-            winner.textContent = 'You lose!';
-        } else {
-            result.style.display = 'none';
-            winner.textContent = 'You win!';
-        }
+      
         return true;
     }
     return false;
@@ -81,7 +77,10 @@ function reload() {
             currentPlayerScore.textContent = `${playerScore}`;
             computerScore = 0;
             currentCompScore.textContent = `${computerScore}`;
+            result.style.display = 'none';
             winner.textContent = '';
+            game();
         }, 3000);
     }
 }
+game();
