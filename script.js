@@ -7,6 +7,7 @@ const winner = document.querySelector('.winner');
 const currentCompScore = document.querySelector('.current_comp');
 const newGame = document.querySelector('button.reset');
 newGame.addEventListener('click', () => location.reload());
+
 function game() {
     buttons.forEach((button) => {
 
@@ -62,25 +63,15 @@ function endGame(computerScore, playerScore) {
     if (computerScore === 5 || playerScore === 5) {
         if (playerScore === 5) {
             winner.textContent = 'Player Won!Press new game';
+            winner.style.fontSize = '42px';
+            winner.style.color = 'blue';
         } else {
             winner.textContent = 'Computer won!Press new game';
+            winner.style.fontSize = '42px';
+            winner.style.color = 'red';
         }
     }
 
 }
 
-
-// function reload() {
-    
-//     if (endGame(computerScore, playerScore)) {
-//         setTimeout(function () {
-//             playerScore = 0;
-//             currentPlayerScore.textContent = `${playerScore}`;
-//             computerScore = 0;
-//             currentCompScore.textContent = `${computerScore}`;
-
-
-//         }, 3000);
-//     }
-// }
 game();
