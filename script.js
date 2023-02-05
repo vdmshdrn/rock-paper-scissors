@@ -1,6 +1,7 @@
 let computerScore = 0;
 let playerScore = 0;
 const result = document.querySelector('.result');
+const choise = document.querySelector('.choise_button');
 const buttons = document.querySelectorAll('.choise');
 const currentPlayerScore = document.querySelector('.current_player');
 const winner = document.querySelector('.winner');
@@ -9,6 +10,9 @@ const newGame = document.querySelector('button.reset');
 newGame.addEventListener('click', () => location.reload());
 
 function game() {
+    if (endGame) {
+        buttons.disabled = true;
+    }
     buttons.forEach((button) => {
 
         button.addEventListener('click', () => {
@@ -22,9 +26,7 @@ function game() {
             currentPlayerScore.textContent = `${playerScore}`;
             currentCompScore.textContent = `${computerScore}`;
             endGame(computerScore, playerScore);
-            isWinner();
-
-            reload();
+            
 
         });
     });
@@ -65,12 +67,15 @@ function endGame(computerScore, playerScore) {
             winner.textContent = 'Player Won!Press new game';
             winner.style.fontSize = '42px';
             winner.style.color = 'blue';
-            button.disabled = true;
+            choise.style.display = 'none';
+            
         } else {
+            
             winner.textContent = 'Computer won!Press new game';
             winner.style.fontSize = '42px';
             winner.style.color = 'red';
-            button.disabled = true;
+            choise.style.display = 'none';
+            
         }
     }
 
