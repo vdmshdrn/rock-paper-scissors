@@ -5,7 +5,8 @@ const buttons = document.querySelectorAll('.choise');
 const currentPlayerScore = document.querySelector('.current_player');
 const winner = document.querySelector('.winner');
 const currentCompScore = document.querySelector('.current_comp');
-
+const newGame = document.querySelector('button.reset');
+newGame.addEventListener('click', () => location.reload());
 function game() {
     buttons.forEach((button) => {
 
