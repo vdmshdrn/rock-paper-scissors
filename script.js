@@ -2,35 +2,30 @@ let computerScore = 0;
 let playerScore = 0;
 const result = document.querySelector('.result');
 const buttons = document.querySelectorAll('.choise');
-const playerOutpup = document.querySelector('.player_output');
 const currentPlayerScore = document.querySelector('.current_player');
 const winner = document.querySelector('.winner');
 const currentCompScore = document.querySelector('.current_comp');
 
 function game() {
-buttons.forEach((button) => {
+    buttons.forEach((button) => {
 
-    button.addEventListener('click', () => {
+        button.addEventListener('click', () => {
 
-        const playerChoise = button.id;
-        const playerOut = document.createElement('p');
-        playerOut.classList.add('playerOut');
-        playerOut.textContent = `You choise ${playerChoise}`;
-        //playerOutpup.appendChild(playerOut);
+            const playerChoise = button.id;
+            const computerChoiseArray = ['rock', 'paper', 'scissors'];
+            const computerChoise = computerChoiseArray[Math.floor(Math.random() * (3 - 0)) + 0];
+            console.log(computerChoise);
 
-        const computerChoiseArray = ['rock', 'paper', 'scissors'];
-        const computerChoise = computerChoiseArray[Math.floor(Math.random() * (3 - 0)) + 0];
-        console.log(computerChoise);
+            playRound(playerChoise, computerChoise);
+            currentPlayerScore.textContent = `${playerScore}`;
+            currentCompScore.textContent = `${computerScore}`;
+            endGame(computerScore, playerScore);
+            isWinner();
 
-        playRound(playerChoise, computerChoise);
-        currentPlayerScore.textContent = `${playerScore}`;
-        currentCompScore.textContent = `${computerScore}`;
-        isWinner(computerScore, playerScore);
+            reload();
 
-        reload();
-
+        });
     });
-});
 }
 
 function playRound(playerChoise, computerChoise) {
@@ -62,24 +57,33 @@ function playRound(playerChoise, computerChoise) {
 
 
 
-function isWinner(computerScore, playerScore) {
-    if (computerScore === 5 || playerScore === 5) {
-      
-        return true;
+function endGame(computerScore, playerScore) {
+    return computerScore === 5 || playerScore === 5;
+
+}
+
+function isWinner() {
+    if (endGame()) {
+        if (playerScore === 5) {
+            result.style.display = 'none';
+            console.log('hey');
+        } else {
+            result.style.display = 'none';
+            console.log('ehey');
+        }
     }
-    return false;
 }
 
 function reload() {
-    if (isWinner(computerScore, playerScore)) {
+    
+    if (endGame(computerScore, playerScore)) {
         setTimeout(function () {
             playerScore = 0;
             currentPlayerScore.textContent = `${playerScore}`;
             computerScore = 0;
             currentCompScore.textContent = `${computerScore}`;
-            result.style.display = 'none';
-            winner.textContent = '';
-            game();
+
+
         }, 3000);
     }
 }
