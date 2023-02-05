@@ -65,10 +65,12 @@ function endGame(computerScore, playerScore) {
             winner.textContent = 'Player Won!Press new game';
             winner.style.fontSize = '42px';
             winner.style.color = 'blue';
+            button.disabled = true;
         } else {
             winner.textContent = 'Computer won!Press new game';
             winner.style.fontSize = '42px';
             winner.style.color = 'red';
+            button.disabled = true;
         }
     }
 
